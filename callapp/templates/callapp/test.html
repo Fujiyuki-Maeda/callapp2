@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callアプリ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+
+
+</head>
+
+<body>
+
+    
+<div container>
+    <section class="sateityu">
+        <div class="news-banner">
+            <div class="news-banner__content">
+                <p>現在の買取状況</p>
+                <p style="font-size: 24px;">[買取の待ち時間はおおよその目安となります]</p>
+            </div>
+        </div>
+        <div class="tableWrapper">
+            <div class="inner_one">
+                <h2>お待ち番号</h2>
+                {% for blog in blogs %}
+                    
+                    {% if not blog.completed %}
+                
+                    <p>No.{{blog}}</p>
+                
+                
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+            <div class="inner_two">
+                <h2>お呼び出し中の番号</h2>
+                {% for blog in blogs %}
+                {% if blog.completed %}
+                <div>
+                    <p>No.{{blog}} <span></span></p>
+                </div>
+                
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="news-footer">
+            <div class="news-footer__content">
+                <p>お手元のレシート番号をご確認下さい</p>
+            </div>
+        </div>
+    </section>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'callapp/base.html' %} {% block content %} 
+
+<div class="header">
+    <a href="{% url 'tasks' %}" style="color: white;">戻る</a>
+</div>
+<h2 style="padding-left: 20px;">番号の追加</h2>
+
+<form action="" method="POST" class="formtitle" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="追加"  class="searchButton" />
+</form>
+{% endblock content %}

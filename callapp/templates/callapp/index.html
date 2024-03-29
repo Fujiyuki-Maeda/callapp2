@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callアプリ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+
+
+</head>
+
+<body>
+
+    
+<div container>
+    <section class="sateityu">
+        <div class="news-banner">
+            <div class="news-banner__content">
+                <p>現在の買取状況</p>
+                <p style="font-size: 24px;">[買取の待ち時間はおおよその目安となります]</p>
+            </div>
+        </div>
+        <div class="tableWrapper">
+            <div class="inner_one">
+                <h2 class="pcb">お待ち<br class="spb">番号</h2>
+                <div class="innerWrapper">
+                    <ul class="pc">
+                        {% for blog in blogs|slice:":8" %}
+                            {% if not blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="pc">
+                        {% for blog in blogs|slice:"8:" %}
+                            {% if not blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="sp">
+                        {% for blog in blogs %}
+                            {% if not blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+                
+            </div>
+            <div class="inner_two">
+                <h2 class="pcb">お呼び出し<br class="spb">番号</h2>
+                
+                <div class="innerWrapper">
+                    <ul class="pc">
+                        {% for blog in blogs|slice:":8" %}
+                            {% if blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="pc">
+                        {% for blog in blogs|slice:"8:" %}
+                            {% if blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="sp">
+                        {% for blog in blogs %}
+                            {% if blog.completed %}
+                                <li>No.{{ blog }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    
+                    
+                </div>
+                
+            </div>
+            <div class="inner_three">
+                <h2 class="pcb">現在の<br class="spb">待ち時間</h2>
+                
+                <div >
+                    <h3>約<span class="blink">{{multiplied}}</span>分</h3>
+                </div>
+                <div class="rolling animation">
+                    <img src="/static/css/img/INFINIT LOOP.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section>
+        <div class="news-footer">
+            <div class="news-footer__content">
+                <p>お手元のレシート番号をご確認下さい</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+

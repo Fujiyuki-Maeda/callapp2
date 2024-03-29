@@ -1,0 +1,181 @@
+
+body {
+    background-color: rgb(172, 231, 231);   
+    font-family: "Noto Sans JP", sans-serif;
+    padding-top: 10px;
+    background-image: url("/static/css/img/game.png");
+    background-size: cover;
+    background-repeat:  no-repeat;  
+    background-size:1240px 650px;
+    }
+.callAppWrapper {
+    max-width: 530px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 6px 6px 14px 0px rgba(0, 0, 0, 0.6);
+    }
+a {
+    color: #595959;
+    text-decoration: none;
+    }
+h1 {
+    margin: 0;
+    }
+.header {
+    text-align: center;
+    padding: 5px 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,52,255,1) 78%);
+    border-radius: 10px 10px 0 0;
+    color: white;
+} 
+
+.taskWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+}
+.taskTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.taskCompletedIcon {
+    height: 20px;
+    width: 20px;
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+.taskInCompletedIcon {
+    height: 20px;
+    width: 20px;
+    background-color: #595959;
+    border-radius: 50%;
+}
+.loginAndLogout {
+    padding: 20px;
+}
+.loginAndLogout a {
+    color: lightcoral;
+}
+.editButton {
+    color: rgb(3, 50, 10);
+}
+.deleteButton {
+    color: red;
+}
+/* タスク検索と追加のフォーム */
+.searchWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+
+}
+/* .searchInput {
+    height: 25px;
+    outline: none;
+    border: 1px solid lightseagreen;
+    border-radius: 5px;
+    padding: 2px 4px;
+    width: 160px;
+} */
+.searchButton {
+    border: 1px solid lightseagreen;
+    padding: 4px 10px;
+    background-color: #fafafa;
+    color: lightseagreen;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.4s;
+    margin-bottom: 10px;
+}
+.searchButton:hover {
+    background-color: lightseagreen;
+    color: white;
+}
+.addButton {
+    font-size: 24px;
+    color: blue;
+}
+label {
+    display: block;
+}
+.accountWrapper {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.end {
+    padding-right: 50px;
+}
+.end span {
+    padding-left: 80px;
+}
+.formtitle {
+    padding-left: 20px;
+}
+/* #####index##### */
+.sateityu {
+    height: 800px;
+    
+    
+}
+/* バナー本体 */
+.news-banner {
+    display: block;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,52,255,1) 78%);
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+/* バナー内コンテンツ */
+.news-banner__content {
+    display: inline-block;
+    color: #fff;
+    line-height: 10px;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: animate-banner 15s linear infinite;
+    font-size: 28px;
+}
+
+/* バナー内の要素をすべて選択 */
+.news-banner__content > * {
+    display: inline-block;
+}
+
+/* 横にスクロールさせるアニメーション */
+    @keyframes animate-banner {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+.tableWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.inner_one p {
+    font-size: 20px;
+}
+.inner_one p span {
+    font-size: 16px;
+}
+.inner_two p {
+    font-size: 20px;
+}
+.inner_two p span {
+    font-size: 16px;
+}

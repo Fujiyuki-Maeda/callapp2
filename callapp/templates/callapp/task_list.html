@@ -1,0 +1,53 @@
+{% extends 'callapp/base.html' %} {% block content %} 
+<div class="header">
+    <h1>買取MAINフォーム</h1>
+</div>
+<div class="searchWrapper">
+    <a href="{% url 'create-task' %}" class="addButton">＋</a>
+    <a href="{% url 'blogs' %}">出力画面に切り替える</a>
+</div>
+
+<div class="tasksWrapper">
+    {% for task in tasks %}
+    <div class="taskWrapper">
+        <!-- タスク完了 -->
+        {% if task.completed %}
+        <div class="taskTitle">
+            <div class="taskCompletedIcon">
+            </div>
+        <s><a href="{% url 'task' task.id %}">No. {{task}}</a></s> 
+        </div>
+        <div class="end"><a href="{% url 'edit-task' task.id %}" class="editButton" style="color: rgb(72, 39, 205);">査定済</a>
+        <span><a href="{% url 'delete-task' task.id %}" class="deleteButton">×</a></span></div>
+        
+        <!-- タスク未完了なら -->
+        {% else %}
+        <div class="taskTitle">
+            <div class="taskInCompletedIcon">
+                
+            </div>
+        <a href="{% url 'task' task.id %}">No. {{task}}</a>
+        </div>
+        <div class="end"><a href="{% url 'edit-task' task.id %}" class="editButton" style="color: brown;">査定済みにする</a>
+            <span><a href="{% url 'delete-task' task.id %}" class="deleteButton">×</a></span></div>
+        
+        {% endif %}
+    </div>
+
+    {% empty %}
+    <h3 style="padding-left: 20px;">タスクがありません</h3>
+    {% endfor %}
+</div>
+
+<div class="loginAndLogout">
+    {% if request.user.is_authenticated %}
+<!-- <p>{{request.user}}</p> -->
+<form action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">ログアウト</button>
+</form>
+{% else %}
+<a href="{% url 'login' %}">ログイン</a>
+{% endif%}
+</div>
+{% endblock content %}
